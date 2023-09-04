@@ -1,0 +1,28 @@
+old tables:
+
+dim - addresses
+dim - articles
+dim - countries
+dim - products
+dim - sources
+dim - software versions
+fact - device details
+fact - stats
+fact - last updated
+dim - alarm severities
+dim - product alarm info
+dim - date
+dim - time
+
+refactored tables:
+
+- fact_alarminfo_combined
+- dim_serial_activity
+- fact_activity_extended
+
+sensor tables:
+
+- no_fill
+- fill
+- lookup
+
