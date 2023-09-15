@@ -21,3 +21,8 @@ RETURN _diff
 _______________________
 
 
+social_security_number_2 = 
+var enddatekey = Calculate(max('btl dAccount_owner'[Max end_date_key]))
+return
+if(enddatekey <> 0, BLANK(), 
+'btl dAccount_owner'[social_security_number])
