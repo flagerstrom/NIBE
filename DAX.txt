@@ -1,0 +1,23 @@
+sensor time diff test 25may = 
+
+VAR _a = CALCULATE(
+    MAX(fact_sensor_no_fill_test_month_comfirmed_devices[ID_ReceivedTime]), 
+    'fact_sensor_no_fill_test_month_comfirmed_devices'[Value]=3.9,
+    'dim - variable lookup'[Name]="eWeatherForecastWindSpeed_0H",
+    'fact_sensor_no_fill_test_month_comfirmed_devices'[YearMonthDay]=20230525,
+    'fact_sensor_no_fill_test_month_comfirmed_devices'[id_serial_number_activity]=10046910)
+
+VAR _b = CALCULATE(
+    MAX(fact_sensor_no_fill_test_month_comfirmed_devices[ID_ReceivedTime]),
+    'fact_sensor_no_fill_test_month_comfirmed_devices'[Value]=-3276.7,
+    'dim - variable lookup'[Name]="eWeatherForecastWindSpeed_0H",
+    'fact_sensor_no_fill_test_month_comfirmed_devices'[YearMonthDay]=20230525,
+    'fact_sensor_no_fill_test_month_comfirmed_devices'[id_serial_number_activity]=10046910)
+
+VAR _diff = _a - _b 
+
+RETURN _diff
+
+_______________________
+
+
